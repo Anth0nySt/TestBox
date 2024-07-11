@@ -4,9 +4,6 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-
-import java.io.File;
 
 import static com.codeborne.selenide.Condition.pseudo;
 import static com.codeborne.selenide.Selectors.byText;
@@ -18,12 +15,13 @@ public class TextFormTest {
         @BeforeAll
         static void beforeAll() {
             Configuration.browserSize = "3840 x 2160";
-            Configuration.baseUrl = "https://demoqa.com&quot";
+            Configuration.baseUrl = "https://demoqa.com";
+            Configuration.pageLoadStrategy = "eager";
 
         }
 
         @Test
-        void FillFormTest() {
+        void fillFormTest() {
             open("https://demoqa.com/automation-practice-form");
             executeJavaScript("$('#fixedban').remove()");
             executeJavaScript("$('footer').remove()");

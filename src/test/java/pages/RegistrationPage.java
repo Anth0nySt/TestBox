@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class RegistrationPage {
 
-    private SelenideElement firstNameInput = $("#firstName"),
+    public SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             setEmailInput = $("#userEmail"),
             setCurrentAddressInput = $("#currentAddress"),
@@ -22,8 +22,8 @@ public class RegistrationPage {
             setHobbyInput = $("#hobbiesWrapper"),
             setStateInput = $("#state"),
             setCityInput = $("#city"),
-    submitButton =  $("#submit"),
-    upload = $("#uploadPicture");
+            submitButton = $("#submit"),
+            upload = $("#uploadPicture");
 
     Calendar calendar = new Calendar();
     RegistrationResult registrationResult = new RegistrationResult();
@@ -105,12 +105,12 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage submit(){
+    public RegistrationPage submit() {
         submitButton.click();
         return this;
     }
 
-    public RegistrationPage uploadPicture(){
+    public RegistrationPage uploadPicture() {
         upload.uploadFromClasspath("magic.jpg");
         return this;
     }
@@ -120,7 +120,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage negativeResult () {
+    public RegistrationPage negativeResult() {
         $(".table-responsive").shouldNotBe(visible);
         return this;
     }

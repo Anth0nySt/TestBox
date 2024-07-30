@@ -1,21 +1,13 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import com.github.javafaker.Faker;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import static utils.RandomUtils.*;
+import static utils.TestData.*;
 
-public class TextFormFakerTest {
+public class TextFormFakerTest extends TestBase{
 
-    Faker faker = new Faker();
-
-    String email = faker.internet().emailAddress();
-    String firstName = faker.name().firstName();
-    String lastName = faker.name().lastName();
     String phoneNumber = getRandomString(10);
-    String currentAddress = faker.address().fullAddress();
     String gender = getRandomGender();
     String subjects = "English";
     String hobby = getRandomHobby();
@@ -27,14 +19,6 @@ public class TextFormFakerTest {
 
 
     RegistrationPage registrationPage = new RegistrationPage();
-
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.browserSize = "3840 x 2160";
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.pageLoadStrategy = "eager";
-
-    }
 
     @Test
     void fillFormTest() {

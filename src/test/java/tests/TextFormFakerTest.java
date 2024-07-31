@@ -2,20 +2,9 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
-import static utils.RandomUtils.*;
 import static utils.TestData.*;
 
 public class TextFormFakerTest extends TestBase{
-
-    String phoneNumber = getRandomString(10);
-    String gender = getRandomGender();
-    String subjects = "English";
-    String hobby = getRandomHobby();
-    String state = "NCR";
-    String city = "Noida";
-    String day = "28";
-    String month = "August";
-    String year = "1991";
 
 
     RegistrationPage registrationPage = new RegistrationPage();
@@ -33,7 +22,7 @@ public class TextFormFakerTest extends TestBase{
                 .setCurrentAddress(currentAddress)
                 .setSubjects(subjects)
                 .setHobby(hobby)
-                .setDateOfBirth(day, month, year)
+                .setDateOfBirth(BirthDay, BirthDayMonth, BirthDayYear)
                 .setState(state)
                 .setCity(city)
                 .uploadPicture()
@@ -46,7 +35,9 @@ public class TextFormFakerTest extends TestBase{
                 .checkResult("Subjects", subjects)
                 .checkResult("Hobbies", hobby)
                 .checkResult("Picture", "magic.jpg")
-                .checkResult("Date of Birth", year)
+                .checkResult("Date of Birth", BirthDayYear)
+                .checkResult("Date of Birth", BirthDayMonth)
+                .checkResult("Date of Birth", BirthDay)
                 .checkResult("Address", currentAddress)
                 .checkResult("State and City", state)
                 .checkResult("State and City", city);

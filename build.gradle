@@ -17,3 +17,9 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+task textForm_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("forJenkins")
+    }
+}

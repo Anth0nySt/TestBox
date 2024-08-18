@@ -21,6 +21,8 @@ allure {
     }
 }
 
+
+
 dependencies {
     testImplementation(
             "com.codeborne:selenide:6.19.1",
@@ -46,3 +48,4 @@ task textForm_test(type: Test) {
         includeTags("forJenkins")
     }
 }
+

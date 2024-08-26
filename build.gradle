@@ -46,6 +46,6 @@ tasks.withType(Test) {
 
 task propertiesTest(type: Test) {
     useJUnitPlatform {
-        includeTags("browser")
+        includeTags("browser", "resolution")
     }
 }

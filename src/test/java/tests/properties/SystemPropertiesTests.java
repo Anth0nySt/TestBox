@@ -8,6 +8,6 @@ public class SystemPropertiesTests {
     @Tag("Browser Change")
     @Test
     void systemPropertiesTest() {
-        String browser = System.getProperty("browser");
+        String browser = System.getProperty("browser","chrome");
     }
 }

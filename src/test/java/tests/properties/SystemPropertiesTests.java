@@ -9,5 +9,6 @@ public class SystemPropertiesTests {
     @Test
     void systemPropertiesTest() {
         String browser = System.getProperty("browser","chrome");
+        System.out.println(browser);
     }
 }

@@ -44,12 +44,6 @@ tasks.withType(Test) {
     }
 }
 
-task textForm_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("forJenkins")
-    }
-}
-
 task propertiesTest(type: Test) {
     useJUnitPlatform {
         includeTags("Browser Change")

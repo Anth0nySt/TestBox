@@ -1,22 +1,12 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
 
-public class TextFormTest {
+public class TextFormTest extends TestBase{
 
     RegistrationPage registrationPage = new RegistrationPage();
-
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.browserSize = "3840 x 2160";
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.pageLoadStrategy = "eager";
-
-    }
 
     @Test
     void fillFormRequaredTest() {

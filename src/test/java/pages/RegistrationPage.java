@@ -34,6 +34,7 @@ public class RegistrationPage {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
+
     }
 
     public RegistrationPage dontShowBanner() {
